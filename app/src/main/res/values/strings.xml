@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TransporTEC</string>
+    <string name="logo_descr">TransporTEC Logo</string>
+    <string name="consult_bus">Consultar autobuses</string>
+    <string name="consult_tren">Consultar trenes</string>
+    <string name="consult_taxi">Consultar taxis</string>
+    <string name="plan_ruta">Planificar ruta</string>
+    <string name="about">Acerca de</string>
 </resources>
