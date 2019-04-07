@@ -64,9 +64,9 @@
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="ffffff" />
-                                      <entry key="backgroundLayerName" value="white_background" />
+                                      <entry key="backgroundLayerName" value="white" />
                                       <entry key="foregroundImage" value="C:\Users\carlo\Documents\U\2019 - 1 (5)\Reque\Video Assets\Logo App.png" />
-                                      <entry key="foregroundLayerName" value="transportec_logo_round" />
+                                      <entry key="foregroundLayerName" value="transportec_foreground" />
                                       <entry key="outputName" value="transportec_logo" />
                                     </map>
                                   </option>
@@ -123,6 +123,11 @@
                 </map>
               </option>
             </PersistentState>
+          </value>
+        </entry>
+        <entry key="vectorWizard">
+          <value>
+            <PersistentState />
           </value>
         </entry>
       </map>

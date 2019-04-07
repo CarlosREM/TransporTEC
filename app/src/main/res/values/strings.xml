@@ -6,4 +6,5 @@
     <string name="consult_taxi">Consultar taxis</string>
     <string name="plan_ruta">Planificar ruta</string>
     <string name="about">Acerca de</string>
+    <string name="MainMenu_Title">Menú principal</string>
 </resources>

@@ -2,21 +2,32 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/white_background"
     tools:context="com.transportec.MainMenu">
+
+    <!-- Toolbar -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/default_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="330dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
         android:contentDescription="@string/logo_descr"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/transportec_logo_foreground" />
+        app:srcCompat="@mipmap/ic_launcher_foreground"
+        tools:layout_editor_absoluteY="0dp" />
 
     <Button
         android:id="@+id/btn_consultBus"
@@ -24,7 +35,9 @@
         android:layout_height="56dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/custombutton"
+        android:contentDescription="@string/consult_bus"
         android:fontFamily="@font/roboto"
+        android:onClick="goConsultBuses"
         android:text="@string/consult_bus"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
@@ -40,8 +53,10 @@
         android:layout_height="56dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/custombutton"
+        android:contentDescription="@string/consult_tren"
         android:fontFamily="@font/roboto"
-        android:text="@string/consult_taxi"
+        android:onClick="goConsultTrenes"
+        android:text="@string/consult_tren"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="20sp"
@@ -56,8 +71,10 @@
         android:layout_height="56dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/custombutton"
+        android:contentDescription="@string/consult_taxi"
         android:fontFamily="@font/roboto"
-        android:text="@string/consult_tren"
+        android:onClick="goConsultTaxis"
+        android:text="@string/consult_taxi"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="20sp"
@@ -72,7 +89,9 @@
         android:layout_height="56dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/custombutton"
+        android:contentDescription="@string/plan_ruta"
         android:fontFamily="@font/roboto"
+        android:onClick="goPlanRuta"
         android:text="@string/plan_ruta"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
@@ -83,13 +102,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_aboutScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/infobutton"
         android:contentDescription="@string/about"
+        android:onClick="goAboutScreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_dialog_info" />
