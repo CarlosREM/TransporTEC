@@ -9,17 +9,17 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-public class ConsultBus_Main extends AppCompatActivity {
+public class ConsultTaxis extends AppCompatActivity {
 
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consult_bus_main);
+        setContentView(R.layout.activity_consult_taxis);
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.consult_bus);
+        toolbar.setTitle(R.string.consult_taxi);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
@@ -38,9 +38,10 @@ public class ConsultBus_Main extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.btn_menu:
-                Toast.makeText(ConsultBus_Main.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ConsultTaxis.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 }
+

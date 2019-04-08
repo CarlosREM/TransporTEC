@@ -8,14 +8,17 @@ import android.content.Intent;
 
 public class MainMenu extends AppCompatActivity {
 
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.MainMenu_Title);
         setSupportActionBar(toolbar);
+
     }
 
     public void goConsultBuses(View view) {
@@ -24,18 +27,23 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void goConsultTrenes(View view) {
-
+        Intent nextScreen = new Intent(this, drawerTest.class);
+        startActivity(nextScreen);
     }
 
     public void goConsultTaxis(View view) {
-
+        Intent nextScreen = new Intent(this, ConsultTaxis.class);
+        startActivity(nextScreen);
     }
 
     public void goPlanRuta(View view) {
-
+        Intent nextScreen = new Intent(this, PlanRuta.class);
+        startActivity(nextScreen);
     }
 
     public void goAboutScreen(View view) {
-
+        Intent nextScreen = new Intent(this, AboutScreen.class);
+        startActivity(nextScreen);
+        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
     }
 }

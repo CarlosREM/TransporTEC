@@ -9,19 +9,22 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-public class ConsultBus_Main extends AppCompatActivity {
+public class AboutScreen extends AppCompatActivity {
 
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consult_bus_main);
+        setContentView(R.layout.activity_about_screen);
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.consult_bus);
+        toolbar.setTitle(R.string.about);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
+
+
     }
 
     @Override
@@ -36,11 +39,18 @@ public class ConsultBus_Main extends AppCompatActivity {
         switch(item.getItemId()) {
             case android.R.id.home:
                 finish();
+                overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down);
                 return true;
             case R.id.btn_menu:
-                Toast.makeText(ConsultBus_Main.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutScreen.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down);
     }
 }

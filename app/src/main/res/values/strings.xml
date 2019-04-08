@@ -7,4 +7,16 @@
     <string name="plan_ruta">Planificar ruta</string>
     <string name="about">Acerca de</string>
     <string name="MainMenu_Title">Menú principal</string>
+    <string name="navMenu">Menu de Navegación</string>
+    <string name="Devs">Desarrolladores:\n> Fabricio Ceciliano Navarro\n> Carlos Esquivel Morales\n> Ariel Valverde Ramirez \n\nContacto: soporte.transportec@gmail.com</string>
+    <string name="version">TransporTEC v1.0a</string>
+    <string name="about_header">Instituto Tecnológico de Costa Rica: Sede Central\n\nIC-5821: Requerimientos de Software\nGrupo 2\n\nProyecto 1: TransporTEC</string>
+    <string name="prof">Profesor:\n> Jaime Solano Soto</string>
+    <string name="title_activity_drawer_test">drawerTest</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>

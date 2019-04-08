@@ -4,20 +4,43 @@
     package="com.transportec">
 
     <application
-        android:label="@string/app_name"
         android:icon="@mipmap/transportec_logo"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/transportec_logo_round"
         android:supportsRtl="true"
         android:theme="@style/DefaultTheme.Base"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name=".drawerTest"
+            android:label="@string/title_activity_drawer_test"
+            android:theme="@style/DefaultTheme.Base.NoActionBar"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu" />
-        <activity android:name=".ConsultBus_Main" />
+        <activity
+            android:name=".MainMenu"
+            android:label="@string/MainMenu_Title" />
+        <activity
+            android:name=".ConsultBus_Main"
+            android:label="@string/consult_bus"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".ConsultTren_Main"
+            android:label="@string/consult_tren"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".ConsultTaxis"
+            android:label="@string/consult_taxi"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".PlanRuta"
+            android:label="@string/plan_ruta"
+            android:parentActivityName=".MainMenu" />
+        <activity android:name=".AboutScreen" />
     </application>
 
 </manifest>
