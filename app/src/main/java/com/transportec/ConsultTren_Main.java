@@ -1,10 +1,12 @@
 package com.transportec;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.Objects;
@@ -44,5 +46,20 @@ public class ConsultTren_Main extends AppCompatActivity {
                 //*/
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goTrenBPC(View view) {
+        Intent nextScreen = new Intent(this, ConsultTren_BPC.class);
+        startActivity(nextScreen);
+    }
+
+    public void goTrenCEa(View view) {
+        Intent nextScreen = new Intent(this, ConsultTren_CEa.class);
+        startActivity(nextScreen);
+    }
+
+    public void goTrenAHSJ(View view) {
+        Intent nextScreen = new Intent(this, ConsultTren_AHSJ.class);
+        startActivity(nextScreen);
     }
 }

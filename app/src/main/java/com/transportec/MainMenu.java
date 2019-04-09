@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -37,8 +38,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void goPlanRuta(View view) {
-        Intent nextScreen = new Intent(this, PlanRuta.class);
-        startActivity(nextScreen);
+        Toast.makeText(MainMenu.this, "Coming Soon... : )", Toast.LENGTH_SHORT).show();
     }
 
     public void goAboutScreen(View view) {

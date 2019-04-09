@@ -1,26 +1,23 @@
 package com.transportec;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.Objects;
 
-public class ConsultBus_Main extends AppCompatActivity {
+public class ConsultTren_CEa extends AppCompatActivity {
 
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consult_bus_main);
-
+        setContentView(R.layout.activity_consult_tren_cea);
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.consult_bus);
+        toolbar.setTitle(R.string.tren_CEa);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
@@ -45,15 +42,5 @@ public class ConsultBus_Main extends AppCompatActivity {
                 //*/
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void goBusesTEC(View view) {
-        Intent nextScreen = new Intent(this, ConsultBus_TEC.class);
-        startActivity(nextScreen);
-    }
-
-    public void goOtrosBuses(View view) {
-        Intent nextScreen = new Intent(this, ConsultBus_Otros.class);
-        startActivity(nextScreen);
     }
 }

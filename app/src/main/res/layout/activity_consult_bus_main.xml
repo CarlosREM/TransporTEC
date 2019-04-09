@@ -5,9 +5,9 @@
     android:id="@+id/activity_consult_bus_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".ConsultBus_Main">
 
     <!-- Toolbar -->
@@ -16,6 +16,61 @@
         layout="@layout/default_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_buses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/consult_bus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/buses" />
+
+    <Button
+        android:id="@+id/btn_otrosBuses"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custombutton"
+        android:fontFamily="@font/roboto"
+        android:onClick="goOtrosBuses"
+        android:text="@string/otrosBuses"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_busesTEC" />
+
+    <Button
+        android:id="@+id/btn_busesTEC"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custombutton"
+        android:fontFamily="@font/roboto"
+        android:onClick="goBusesTEC"
+        android:text="@string/busesTec"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_buses" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_transparent"
+        android:layout_width="0dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="216dp"
+        android:background="@color/transparent_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

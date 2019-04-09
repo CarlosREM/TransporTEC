@@ -7,7 +7,8 @@
     <string name="plan_ruta">Planificar ruta</string>
     <string name="about">Acerca de</string>
     <string name="MainMenu_Title">Menú principal</string>
-    <string name="navMenu">Menu de Navegación</string>
+    <string name="busesTec">Buses TEC</string>
+    <string name="otrosBuses">Otros Buses</string>
     <string name="Devs">Desarrolladores:\n> Fabricio Ceciliano Navarro\n> Carlos Esquivel Morales\n> Ariel Valverde Ramirez \n\nContacto: soporte.transportec@gmail.com</string>
     <string name="version">TransporTEC v1.0a</string>
     <string name="about_header">Instituto Tecnológico de Costa Rica: Sede Central\n\nIC-5821: Requerimientos de Software\nGrupo 2\n\nProyecto 1: TransporTEC</string>
@@ -20,4 +21,13 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_consult_taxis">Map</string>
+    <string name="search_place_prompt">Escriba algún lugar...</string>
+    <string name="buses_SJC">Buses San Jose - Cartago</string>
+    <string name="buses_CSJ">Buses Cartago - San Jose</string>
+    <string name="tren_AHSJ">Alajuela - Río Segundo - Heredia - San José</string>
+    <string name="tren_BPC">Interurbano Belén - Pavas - Curridabat</string>
+    <string name="tren_CEa">Urbano Cartago - Estación Atlántico</string>
+    <string name="tarifa_tren_ahsj">TARIFAS (₡)\nU. Latina - Heredia . . . . . . . . . . . 460 \nEstación Atlántico - Heredia . . . 420 \nAlajuela - Heredia . . . . . . . . . . . . 585 \n\nAdultos Mayores no pagan.</string>
+    <string name="tarifa_tren_bpc">TARIFA (₡)\nBelén - San José . . . . . . . 330 \nSan José - Curridabat . . . 490 \n\nAdultos Mayores no pagan.</string>
+    <string name="tarifa_tren_cea">TARIFA (₡)\nEst. Atlántico - Est. Cartago . . . 550 \n\nAdultos Mayores no pagan.</string>
 </resources>

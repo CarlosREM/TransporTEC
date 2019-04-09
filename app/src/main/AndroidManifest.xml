@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.transportec">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -21,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/DefaultTheme.Base"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-
+        <activity android:name=".ConsultTren_CEa"></activity>
+        <activity android:name=".ConsultTren_BPC" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -64,6 +64,8 @@
             android:label="@string/plan_ruta"
             android:parentActivityName=".MainMenu" />
         <activity android:name=".AboutScreen" />
+        <activity android:name=".ConsultBus_TEC" />
+        <activity android:name=".ConsultBus_Otros" />
     </application>
 
 </manifest>

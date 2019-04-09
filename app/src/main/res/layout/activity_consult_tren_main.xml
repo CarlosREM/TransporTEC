@@ -5,17 +5,90 @@
     android:id="@+id/activity_consult_tren_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".ConsultTren_Main">
 
     <!-- Toolbar -->
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/default_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/consult_tren"
+        android:cropToPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/trenes_main" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_transparent"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:background="@color/transparent_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_BPC"
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custombutton"
+        android:fontFamily="@font/roboto"
+        android:onClick="goTrenBPC"
+        android:text="@string/tren_BPC"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_main" />
+
+    <Button
+        android:id="@+id/btn_AHSJ"
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custombutton"
+        android:fontFamily="@font/roboto"
+        android:onClick="goTrenAHSJ"
+        android:text="@string/tren_AHSJ"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CEa" />
+
+    <Button
+        android:id="@+id/btn_CEa"
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custombutton"
+        android:fontFamily="@font/roboto"
+        android:onClick="goTrenCEa"
+        android:text="@string/tren_CEa"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_BPC" />
 
 </android.support.constraint.ConstraintLayout>

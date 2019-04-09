@@ -2,6 +2,8 @@ package com.transportec;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -10,6 +12,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -26,19 +32,23 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
+import java.util.List;
+
 
 public class ConsultTaxis extends FragmentActivity implements
         OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener
-{
+        LocationListener {
     private GoogleMap mMap;
     private GoogleApiClient googleApiClient;
     private LocationRequest locationRequest;
     private Location lastLocation;
     private Marker currentUserLocationMarker;
     private static final int Request_User_Location_Code = 99;
+    private double latitude, longitude;
+    private int ProximityRadius = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +64,79 @@ public class ConsultTaxis extends FragmentActivity implements
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
+
+
+    public void onClick(View view){
+        String taxis = "taxi";
+        String types = "taxi_stand";
+        Object transferData[] = new Object[2];
+        LugaresCercanos lugaresCercanos = new LugaresCercanos();
+
+        switch(view.getId()){
+            case R.id.search_address:
+                EditText addressField = (EditText) findViewById(R.id.location_search);
+                String address = addressField.getText().toString();
+
+                List<Address> addressList = null;
+                MarkerOptions userMarkerOptions = new MarkerOptions();
+
+                if(!TextUtils.isEmpty(address)){
+                    Geocoder geocoder = new Geocoder(this);
+
+                    try{
+
+                        addressList = geocoder.getFromLocationName(address, 6);
+
+                        if(addressList != null){
+                            for(int i=0; i<addressList.size();i++){
+                                Address userAddress = addressList.get(i);
+                                LatLng latLng = new LatLng(userAddress.getLatitude(),userAddress.getLongitude());
+
+                                userMarkerOptions.position(latLng);
+                                userMarkerOptions.title(address);
+                                userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+
+                                mMap.addMarker(userMarkerOptions);
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+                            }
+                        }else{
+                            Toast.makeText(this, "Lugar no encontrado.", Toast.LENGTH_SHORT).show();
+                        }
+                    }catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }else{
+                    Toast.makeText(this, "Debe escribir algun lugar...", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+            case R.id.taxis_nearby:
+                mMap.clear();
+                String url = getUrl(latitude, longitude, taxis, types);
+                transferData[0] = mMap;
+                transferData[1] = url;
+
+                lugaresCercanos.execute(transferData);
+                Toast.makeText(this, "Buscando paradas de taxis...", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+    }
+
+    private String getUrl(double latitude, double longitude,String nearbyPlace, String nearbyPlaceType){
+        StringBuilder googleURL = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googleURL.append("location=" + latitude + "," + longitude);
+        googleURL.append("&radius=" + ProximityRadius);
+        googleURL.append("&types=" + nearbyPlaceType);
+        googleURL.append("&name=" + nearbyPlace);
+        googleURL.append("&key=" + R.string.google_maps_key);
+
+        Log.d("ConsultTaxis","url = " + googleURL.toString());
+
+        return googleURL.toString();
+
     }
 
 
@@ -140,6 +223,9 @@ public class ConsultTaxis extends FragmentActivity implements
 
     @Override
     public void onLocationChanged(Location location) {
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
         lastLocation = location;
 
 
@@ -157,7 +243,7 @@ public class ConsultTaxis extends FragmentActivity implements
         currentUserLocationMarker = mMap.addMarker(markerOptions);
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
+        mMap.animateCamera(CameraUpdateFactory.zoomBy(14));
 
 
         if(googleApiClient != null){
