@@ -37,9 +37,11 @@ public class PlanRuta extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 return true;
+                /*
             case R.id.btn_menu:
                 Toast.makeText(PlanRuta.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
                 break;
+                //*/
         }
         return super.onOptionsItemSelected(item);
     }

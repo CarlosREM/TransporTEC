@@ -27,7 +27,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void goConsultTrenes(View view) {
-        Intent nextScreen = new Intent(this, drawerTest.class);
+        Intent nextScreen = new Intent(this, ConsultTren_Main.class);
         startActivity(nextScreen);
     }
 

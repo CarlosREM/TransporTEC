@@ -41,9 +41,11 @@ public class AboutScreen extends AppCompatActivity {
                 finish();
                 overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down);
                 return true;
+                /*
             case R.id.btn_menu:
-                Toast.makeText(AboutScreen.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PlanRuta.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
                 break;
+                //*/
         }
         return super.onOptionsItemSelected(item);
     }

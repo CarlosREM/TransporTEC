@@ -37,9 +37,11 @@ public class ConsultTren_Main extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 return true;
+                /*
             case R.id.btn_menu:
-                Toast.makeText(ConsultTren_Main.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PlanRuta.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
                 break;
+                //*/
         }
         return super.onOptionsItemSelected(item);
     }

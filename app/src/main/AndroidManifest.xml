@@ -3,6 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.transportec">
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
     <application
         android:icon="@mipmap/transportec_logo"
         android:label="@string/app_name"
@@ -10,10 +21,26 @@
         android:supportsRtl="true"
         android:theme="@style/DefaultTheme.Base"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity
-            android:name=".drawerTest"
-            android:label="@string/title_activity_drawer_test"
-            android:theme="@style/DefaultTheme.Base.NoActionBar"></activity>
+            android:name=".ConsultTaxis"
+            android:label="@string/title_activity_consult_taxis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.transportec.MainMenu" />
+        </activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,10 +58,6 @@
         <activity
             android:name=".ConsultTren_Main"
             android:label="@string/consult_tren"
-            android:parentActivityName=".MainMenu" />
-        <activity
-            android:name=".ConsultTaxis"
-            android:label="@string/consult_taxi"
             android:parentActivityName=".MainMenu" />
         <activity
             android:name=".PlanRuta"
