@@ -54,7 +54,7 @@ public class LugaresCercanos extends AsyncTask<Object, String, String>
 
             markerOptions.position(latLng);
             markerOptions.title(nameOfPlace + ": " + vicinity);
-            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
 
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
